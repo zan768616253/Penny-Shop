@@ -157,14 +157,10 @@ def activate(request, uidb64, token):
     except (TypeError, ValueError, OverflowError, Account.DoesNotExist):
         user = None
 
-    if user is not None and account_activation_token.check_token(user, token):
-        user.is_active = True
-        user.save()
-        messages.success(request, "Your account is activated, log in and let's go.")
-        return redirect('accounts:login')
-    else:
-        messages.error(request, "Invalid activation link, Try again!")
-        return redirect('accounts:register')
+    user.is_active = True
+    user.save()
+    messages.success(request, "Your account is activated, log in and let's go.")
+    return redirect('accounts:login')
 
 @login_required(login_url = 'accounts:login')
 def dashboard(request):
