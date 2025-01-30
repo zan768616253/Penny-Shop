@@ -100,7 +100,7 @@
                                     {% if user.id is None %}
                                     <ul style="background:#1c1427">
                                         <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                                        <li><a href="{% url 'accounts:register' %}">Registar</a></li>
+                                        <li><a href="{% url 'accounts:register' %}">Register</a></li>
                                     </ul>
                                     {% else %}
                                     <ul style="background:#1c1427">
@@ -114,7 +114,7 @@
                                     <ul style="background:#1c1427">
                                         <li><a href="/account/dashboard">My account</a></li>
                                         <li><a href="/cart">My cart</a></li>
-                                        <li><a href="/wishlist.html">My wishlist</a></li>
+                                        <li><a href="#">My wishlist</a></li>
                                         <li><a href="/orders/checkout">Check out</a></li>
                                     </ul>
                                 </li>
