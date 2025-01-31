@@ -121,7 +121,7 @@
 document.getElementById('mock-paypal-button').addEventListener('click', function() {
   var csrfToken = '{{ csrf_token }}';
   var orderID = '{{ order.order_number }}';
-  var transID = 'MOCK_PAYMENT_ID';
+  var transID = crypto.randomUUID();
   var paymentMethod = 'Paypal';
   var status = 'Completed';
 
