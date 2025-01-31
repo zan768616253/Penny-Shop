@@ -8,6 +8,24 @@ SECRET_KEY = 'django-insecure-&!4%-vjbqun^7idhr9ov$3*!233xczz4zt4i1bj_x&ur14makw
 
 DEBUG = True
 
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+        },
+    },
+}
+
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -167,4 +185,4 @@ EMAIL_HOST_PASSWORD = 'ynxh agev lywn wxxi'
 # AWS_STORAGE_BUCKET_NAME = 'e--shop-bucket'
 
 if os.getcwd() == '/app' :
-    DEBUG = False
+    DEBUG = True

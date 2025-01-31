@@ -174,16 +174,16 @@ def payments(request):
     CartItem.objects.filter(user=request.user).delete()
 
     
-    # Send order recieved email to cutomer 
-    #subject = 'Thank you for your order!'
-    #message = render_to_string('shop/orders/checkout/payment_recieved_email.html', {
-    #    'user': request.user,
-    #    'order':order,
-    #})
-    #to_email = request.user.email
-    #send_email = EmailMessage(subject, message, to=[to_email])
-    #send_email.send()
-#
+    # Send order recieved email to cutomer
+    subject = 'Thank you for your order!'
+    message = render_to_string('shop/orders/checkout/payment_recieved_email.html', {
+       'user': request.user,
+       'order':order,
+    })
+    to_email = request.user.email
+    send_email = EmailMessage(subject, message, to=[to_email])
+    send_email.send()
+
     #
     ## Send order recieved email to admin account 
     #subject = 'Thank you for your order!'
@@ -226,6 +226,7 @@ def order_completed(request):
             'subtotal': subtotal,
         }
         return render(request, 'shop/orders/order_completed/order_completed.html', context)
-    except (Payment.DoesNotExist, Order.DoesNotExist):
+    except (Payment.DoesNotExist, Order.DoesNotExist) as e:
+        print(f"Exception occurred: {e}")
         return redirect('shop:shop')
     
