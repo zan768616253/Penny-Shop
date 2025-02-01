@@ -854,7 +854,6 @@ header.header-one {
 }
 .date-read > a:first-child {border-right: 1px solid #eee;}
 .s-blog-text a {
-    color: #333;
     font-size: 16px;
     font-weight: 400;
 }
