@@ -171,8 +171,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST= 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT= 587 
-EMAIL_HOST_USER = 'eric.wang@dbvisit.com'
-EMAIL_HOST_PASSWORD = 'ynxh agev lywn wxxi'
+EMAIL_HOST_USER = 'pennyshoppingads@gmail.com'
+EMAIL_HOST_PASSWORD = 'oxod ahjl aulv phjk'
 
 # AWS_QUERYSTRING_AUTH = False
 
